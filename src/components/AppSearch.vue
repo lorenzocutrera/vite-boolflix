@@ -1,5 +1,5 @@
 <script>
-import { state } from '../state';
+import { state } from '../state.js';
 
 export default {
     name: 'AppSearch',
@@ -20,10 +20,8 @@ export default {
             <input type="text" v-model="state.query">
             <button type="submit" class="text-uppercase">search</button>
         </div>
-        
+
     </nav>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

@@ -9,7 +9,7 @@ export default {
       state,
     };
   },
-  components: { 
+  components: {
     AppSearch,
     AppHeader
   },
@@ -27,9 +27,9 @@ export default {
   <div class="container">
     <div class="row">
       <div class="card col-3" v-for="film in state.lista_film">
-      
-        
-        <p class="titolo"> {{ film.title }}</p>
+
+
+        <p class="titolo">{{ film.title }}</p>
         <p class="titolo_originale">{{ film.original_title }}</p>
         <p class="lingua">{{ film.original_language }}</p>
         <p class="voto"> {{ film.vote_average }}</p>

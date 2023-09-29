@@ -9,7 +9,7 @@ export default {
             state
         }
     },
-    components: { AppSearch},
+    components: { AppSearch },
     methods: {
         searchFilm() {
             state.fetchData();
@@ -19,13 +19,9 @@ export default {
 </script>
 
 <template>
-
-    <div class="container">         
-            <AppSearch @perform-search="searchFilm"></AppSearch>    
+    <div class="container">
+        <AppSearch @perform-search="searchFilm"></AppSearch>
     </div>
-
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

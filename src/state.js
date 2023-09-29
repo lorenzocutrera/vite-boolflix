@@ -1,5 +1,5 @@
 import { reactive } from "vue";
-import axios from '../node_modules/axios'
+import axios from 'axios'
 
 export const state = reactive({
     base_url: 'https://api.themoviedb.org/3/search/movie?api_key=397e8a56321ae0fb66bfc8126493d29c',
