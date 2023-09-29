@@ -1,48 +1,41 @@
 <script>
-import axios from 'axios';
+import AppHeader from './components/AppHeader.vue';
+import AppSearch from './components/AppSearch.vue';
+import { state } from './state.js'
 
-export default{
-  components:{
-    axios
-  },
+export default {
   data() {
-        return {
-            base_url: 'https://api.themoviedb.org/3/search/movie?api_key=397e8a56321ae0fb66bfc8126493d29c',
-
-        }
-    },
-    created() {
-
-        console.log(this, this.base_url);
-        /* axios.get returs a promis (una promessa... ti rispondo prima o poi) */
-        axios
-            .get(this.base_url)
-            .then(response => {
-                /* The request response is available in the then method */
-                console.log(response); // the whole response object
-                // console.log(response.data); // the whole data response
-                // console.log(response.data.response);
-
-                this.cards = response.data.data;
-            })
-            .catch(error => {
-                /* Handle a request error */
-                console.log('Error:');
-                console.error(error);
-                this.error = error.message
-            })
-
-
-    }
+    return {
+      state,
+    };
+  },
+  components: { 
+    AppSearch,
+    AppHeader
+  },
+  created() {
+    state.fetchData();
+  },
 
 }
+
 </script>
 
 <template>
- 
-   
+  <AppHeader></AppHeader>
+
+  <div class="container">
+    <div class="row">
+      <div class="card col-3" v-for="film in state.lista_film">
+      
+        
+        <p class="titolo"> {{ film.title }}</p>
+        <p class="titolo_originale">{{ film.original_title }}</p>
+        <p class="lingua">{{ film.original_language }}</p>
+        <p class="voto"> {{ film.vote_average }}</p>
+      </div>
+
+
+    </div>
+  </div>
 </template>
-
-<style scoped>
-
-</style>
