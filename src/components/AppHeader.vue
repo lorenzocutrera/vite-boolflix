@@ -1,6 +1,6 @@
 <script>
 import AppSearch from './AppSearch.vue';
-import { state } from '../state';
+import { state } from '../state.js';
 
 export default {
     name: 'AppHeader',
@@ -12,6 +12,7 @@ export default {
     components: { AppSearch },
     methods: {
         searchFilm() {
+            console.log('siamoqui');
             state.fetchData();
         }
     }

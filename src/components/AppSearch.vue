@@ -15,11 +15,11 @@ export default {
 <template>
     <nav>
 
-        <div @submit.prevent="$emit('performSearch')" class="">
+        <form @submit.prevent="$emit('performSearch')" class="">
 
             <input type="text" v-model="state.query">
             <button type="submit" class="text-uppercase">search</button>
-        </div>
+        </form>
 
     </nav>
 </template>
